@@ -1,0 +1,14 @@
+{
+    "name": "ddf--global_carbon_project--global_carbon_budget",
+    "author": "Gapminder",
+    "description": "Global Carbon Budget 2019 https://doi.org/10.5194/essd-11-1783-2019",
+    "language": {
+        "name": "English",
+        "id": "en"
+    },
+    "translations": [],
+    "license": "CC-BY-4.0",
+    "title": "Global Carbon Budget",
+    "version": "0.0.1",
+    "resources": []
+}
