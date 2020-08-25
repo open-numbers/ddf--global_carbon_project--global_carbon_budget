@@ -1,14 +1,1195 @@
 {
     "name": "ddf--global_carbon_project--global_carbon_budget",
-    "author": "Gapminder",
-    "description": "Global Carbon Budget 2019 https://doi.org/10.5194/essd-11-1783-2019",
     "language": {
         "name": "English",
         "id": "en"
     },
-    "translations": [],
-    "license": "CC-BY-4.0",
     "title": "Global Carbon Budget",
+    "description": "Global Carbon Budget 2019 https://doi.org/10.5194/essd-11-1783-2019",
+    "author": "Gapminder",
+    "license": "CC-BY-4.0",
+    "created": "2020-08-25T06:04:59.657298+00:00",
+    "translations": [],
     "version": "0.0.1",
-    "resources": []
+    "resources": [
+        {
+            "name": "ddf--concepts",
+            "path": "ddf--concepts.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "concept"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "definition"
+                    },
+                    {
+                        "name": "unit"
+                    },
+                    {
+                        "name": "concept_type"
+                    },
+                    {
+                        "name": "domain"
+                    }
+                ],
+                "primaryKey": "concept"
+            }
+        },
+        {
+            "name": "ddf--datapoints--atmospheric_growth--by--global--year",
+            "path": "ddf--datapoints--atmospheric_growth--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "atmospheric_growth"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--budget_imbalance--by--global--year",
+            "path": "ddf--datapoints--budget_imbalance--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "budget_imbalance"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--consumption_emissions--by--global--year",
+            "path": "ddf--datapoints--consumption_emissions--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "consumption_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--consumption_emissions--by--nation--year",
+            "path": "ddf--datapoints--consumption_emissions--by--nation--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "nation"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "consumption_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--consumption_emissions--by--region--year",
+            "path": "ddf--datapoints--consumption_emissions--by--region--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "consumption_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "region",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year",
+            "path": "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "consumption_emissions_statistical_difference"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--emissions_transfers--by--global--year",
+            "path": "ddf--datapoints--emissions_transfers--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "emissions_transfers"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--emissions_transfers--by--nation--year",
+            "path": "ddf--datapoints--emissions_transfers--by--nation--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "nation"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "emissions_transfers"
+                    }
+                ],
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--emissions_transfers--by--region--year",
+            "path": "ddf--datapoints--emissions_transfers--by--region--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "emissions_transfers"
+                    }
+                ],
+                "primaryKey": [
+                    "region",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--emissions_transfers_statistical_difference--by--global--year",
+            "path": "ddf--datapoints--emissions_transfers_statistical_difference--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "emissions_transfers_statistical_difference"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--fossil_fuel_and_industry--by--global--year",
+            "path": "ddf--datapoints--fossil_fuel_and_industry--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "fossil_fuel_and_industry"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_atmospheric_growth--by--global--year",
+            "path": "ddf--datapoints--historical_atmospheric_growth--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_atmospheric_growth"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_budget_imbalance--by--global--year",
+            "path": "ddf--datapoints--historical_budget_imbalance--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_budget_imbalance"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year",
+            "path": "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_fossil_fuel_and_industry"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_land_sink--by--global--year",
+            "path": "ddf--datapoints--historical_land_sink--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_land_sink"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_land_use_change_emissions--by--global--year",
+            "path": "ddf--datapoints--historical_land_use_change_emissions--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_land_use_change_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_ocean_sink--by--global--year",
+            "path": "ddf--datapoints--historical_ocean_sink--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_ocean_sink"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--land_sink--by--global--year",
+            "path": "ddf--datapoints--land_sink--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "land_sink"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--land_use_change_emissions--by--global--year",
+            "path": "ddf--datapoints--land_use_change_emissions--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "land_use_change_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ocean_sink--by--global--year",
+            "path": "ddf--datapoints--ocean_sink--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ocean_sink"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--territorial_emissions--by--global--year",
+            "path": "ddf--datapoints--territorial_emissions--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "territorial_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--territorial_emissions--by--nation--year",
+            "path": "ddf--datapoints--territorial_emissions--by--nation--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "nation"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "territorial_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--territorial_emissions--by--region--year",
+            "path": "ddf--datapoints--territorial_emissions--by--region--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "territorial_emissions"
+                    }
+                ],
+                "primaryKey": [
+                    "region",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--territorial_emissions_statistical_difference--by--global--year",
+            "path": "ddf--datapoints--territorial_emissions_statistical_difference--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "territorial_emissions_statistical_difference"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo",
+            "path": "ddf--entities--geo.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "geo"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "is--nation"
+                    },
+                    {
+                        "name": "is--region"
+                    },
+                    {
+                        "name": "is--global"
+                    }
+                ],
+                "primaryKey": "geo"
+            }
+        }
+    ],
+    "ddfSchema": {
+        "concepts": [
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "concept_type",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "definition",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "domain",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "unit",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            }
+        ],
+        "entities": [
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "is--global",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--nation",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "is--nation",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation"
+                ],
+                "value": "is--nation",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "is--nation",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo"
+                ]
+            }
+        ],
+        "datapoints": [
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "atmospheric_growth",
+                "resources": [
+                    "ddf--datapoints--atmospheric_growth--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "atmospheric_growth",
+                "resources": [
+                    "ddf--datapoints--atmospheric_growth--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "budget_imbalance",
+                "resources": [
+                    "ddf--datapoints--budget_imbalance--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "budget_imbalance",
+                "resources": [
+                    "ddf--datapoints--budget_imbalance--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "consumption_emissions",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions--by--global--year",
+                    "ddf--datapoints--consumption_emissions--by--nation--year",
+                    "ddf--datapoints--consumption_emissions--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "consumption_emissions",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ],
+                "value": "consumption_emissions",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions--by--nation--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region",
+                    "year"
+                ],
+                "value": "consumption_emissions",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "consumption_emissions_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "consumption_emissions_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "emissions_transfers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers--by--global--year",
+                    "ddf--datapoints--emissions_transfers--by--nation--year",
+                    "ddf--datapoints--emissions_transfers--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "emissions_transfers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ],
+                "value": "emissions_transfers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers--by--nation--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region",
+                    "year"
+                ],
+                "value": "emissions_transfers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "emissions_transfers_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers_statistical_difference--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "emissions_transfers_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers_statistical_difference--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "fossil_fuel_and_industry",
+                "resources": [
+                    "ddf--datapoints--fossil_fuel_and_industry--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "fossil_fuel_and_industry",
+                "resources": [
+                    "ddf--datapoints--fossil_fuel_and_industry--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_atmospheric_growth",
+                "resources": [
+                    "ddf--datapoints--historical_atmospheric_growth--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_atmospheric_growth",
+                "resources": [
+                    "ddf--datapoints--historical_atmospheric_growth--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_budget_imbalance",
+                "resources": [
+                    "ddf--datapoints--historical_budget_imbalance--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_budget_imbalance",
+                "resources": [
+                    "ddf--datapoints--historical_budget_imbalance--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_fossil_fuel_and_industry",
+                "resources": [
+                    "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_fossil_fuel_and_industry",
+                "resources": [
+                    "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_land_sink",
+                "resources": [
+                    "ddf--datapoints--historical_land_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_land_sink",
+                "resources": [
+                    "ddf--datapoints--historical_land_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_land_use_change_emissions",
+                "resources": [
+                    "ddf--datapoints--historical_land_use_change_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_land_use_change_emissions",
+                "resources": [
+                    "ddf--datapoints--historical_land_use_change_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_ocean_sink",
+                "resources": [
+                    "ddf--datapoints--historical_ocean_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_ocean_sink",
+                "resources": [
+                    "ddf--datapoints--historical_ocean_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "land_sink",
+                "resources": [
+                    "ddf--datapoints--land_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "land_sink",
+                "resources": [
+                    "ddf--datapoints--land_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "land_use_change_emissions",
+                "resources": [
+                    "ddf--datapoints--land_use_change_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "land_use_change_emissions",
+                "resources": [
+                    "ddf--datapoints--land_use_change_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "ocean_sink",
+                "resources": [
+                    "ddf--datapoints--ocean_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "ocean_sink",
+                "resources": [
+                    "ddf--datapoints--ocean_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "territorial_emissions",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions--by--global--year",
+                    "ddf--datapoints--territorial_emissions--by--nation--year",
+                    "ddf--datapoints--territorial_emissions--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "territorial_emissions",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "nation",
+                    "year"
+                ],
+                "value": "territorial_emissions",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions--by--nation--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region",
+                    "year"
+                ],
+                "value": "territorial_emissions",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "territorial_emissions_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions_statistical_difference--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "territorial_emissions_statistical_difference",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions_statistical_difference--by--global--year"
+                ]
+            }
+        ],
+        "synonyms": []
+    }
 }
