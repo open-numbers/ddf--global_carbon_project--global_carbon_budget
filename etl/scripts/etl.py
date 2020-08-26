@@ -91,7 +91,6 @@ def country_carbon_emission_datapoints(data, indicator_name):
 
 
 def region_carbon_emission_datapoints(data, indicator_name):
-    # FIXME: create bunkers domain
     return get_data_from_nation_file(data, 'region', indicator_name,
                                      start_col='kp_annex_b', end_col='bunkers')
 
@@ -110,11 +109,20 @@ def statistical_diff_datapoints(data, indicator_name):
     return df.sort_index().dropna()
 
 
-### Functions for entities
+def statistical_diff_datapoints(data, indicator_name):
+    df = data.loc[:, ['year', 'statistical_difference']].copy()
+    df['global'] = 'world'
+    df = df.set_index(['global', 'year'])
+    df.columns = [indicator_name]
+    return df.sort_index().dropna()
 
 
-### Functions for concepts
-
+def bunker_fuel_datapoints(data, indicator_name):
+    df = data.loc[:, ['year', 'bunkers']].copy()
+    df['global'] = 'world'
+    df = df.set_index(['global', 'year'])
+    df.columns = [indicator_name]
+    return df.sort_index().dropna()
 
 
 def main():
@@ -151,6 +159,9 @@ def main():
         stat_diff_name = indicator_name + '_statistical_difference'
         df = statistical_diff_datapoints(data, stat_diff_name)
         df.to_csv(os.path.join(OUTPUT_DIR, f'ddf--datapoints--{stat_diff_name}--by--global--year.csv'))
+        bunker_name = indicator_name + '_by_bunkers'
+        df = bunker_fuel_datapoints(data, bunker_name)
+        df.to_csv(os.path.join(OUTPUT_DIR, f'ddf--datapoints--{bunker_name}--by--global--year.csv'))
 
     # entities
     entities = sheet_data.columns.tolist()[1:]

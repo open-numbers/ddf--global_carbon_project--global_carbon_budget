@@ -34,3 +34,6 @@ Notes:
 - territorial emissions
 - consumption emissions
 - emissions transfers
+- bunker fuel emissions and statistical difference (between the world
+  emissions and the sum of the emissions for each countries and for
+  the bunker fuels) for above 3 indicators
