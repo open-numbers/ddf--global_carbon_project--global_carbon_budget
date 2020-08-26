@@ -57,3 +57,7 @@ def main():
     download(source_links['global'], os.path.join(SOURCE_FILE_DIR, 'global.xlsx'))
     download(source_links['nation'], os.path.join(SOURCE_FILE_DIR, 'nation.xlsx'))
     print('updated source files')
+
+
+if __name__ == '__main__':
+    main()

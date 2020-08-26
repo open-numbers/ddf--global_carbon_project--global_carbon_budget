@@ -8,8 +8,8 @@ from ddf_utils.str import to_concept_id
 CONVERT_RATIO = 3.664
 
 SOURCE_DIR = '../source/'
-NATION_FILE = os.path.join(SOURCE_DIR, 'National_Carbon_Emissions_2019v1.0.xlsx')
-GLOBAL_FILE = os.path.join(SOURCE_DIR, 'Global_Carbon_Budget_2019v1.0.xlsx')
+NATION_FILE = os.path.join(SOURCE_DIR, 'nation.xlsx')
+GLOBAL_FILE = os.path.join(SOURCE_DIR, 'global.xlsx')
 OUTPUT_DIR = '../../'
 
 EXCEL_CONFIG_NATION = {
