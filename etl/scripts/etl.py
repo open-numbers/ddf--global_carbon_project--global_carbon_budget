@@ -1,4 +1,4 @@
-# etl for gcp 2019
+# etl for gcp 2020
 
 import os
 import pandas as pd
@@ -14,7 +14,7 @@ OUTPUT_DIR = '../../'
 
 EXCEL_CONFIG_NATION = {
     'Territorial Emissions': {
-        'skiprows': 15
+        'skiprows': 10
     },
     'Consumption Emissions': {
         'skiprows': 7
@@ -26,22 +26,25 @@ EXCEL_CONFIG_NATION = {
 
 EXCEL_CONFIG_GLOBAL = {
     'Global Carbon Budget': {
-        'skiprows': 18
+        'skiprows': 20
     },
-    'Fossil Emissions by Fuel Type': {
-        'skiprows': 12
+    'Fossil Emissions by Category': {
+        'skiprows': 8
     },
     'Land-Use Change Emissions': {
-        'skiprows': 25
+        'skiprows': 27
     },
     'Ocean Sink': {
-        'skiprows': 22
+        'skiprows': 23
     },
     'Terrestrial Sink': {
         'skiprows': 23
     },
+    'Cement Carbonation Sink': {
+        'skiprows': 9
+    },
     'Historical Budget': {
-        'skiprows': 14
+        'skiprows': 15
     }
 }
 
@@ -72,8 +75,7 @@ def global_carbon_budget_datapoints(sheet_data, historical=False):
 
 def fix_column_country_data(sheet_data):
     data = sheet_data.iloc[1:, :].copy()
-    data = data.rename(columns={data.columns[0]: 'year',
-                                "CZECH REPUBLIC": "CZECHIA"})
+    data = data.rename(columns={data.columns[0]: 'year'})
     data['year'] = data['year'].astype(int)
     return data
 
