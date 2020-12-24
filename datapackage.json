@@ -166,6 +166,27 @@
             }
         },
         {
+            "name": "ddf--datapoints--consumption_emissions_by_bunkers--by--global--year",
+            "path": "ddf--datapoints--consumption_emissions_by_bunkers--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "consumption_emissions_by_bunkers"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
             "name": "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year",
             "path": "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year.csv",
             "schema": {
@@ -245,6 +266,27 @@
                 ],
                 "primaryKey": [
                     "region",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--emissions_transfers_by_bunkers--by--global--year",
+            "path": "ddf--datapoints--emissions_transfers_by_bunkers--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "emissions_transfers_by_bunkers"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
                     "year"
                 ]
             }
@@ -560,6 +602,27 @@
                 ],
                 "primaryKey": [
                     "region",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--territorial_emissions_by_bunkers--by--global--year",
+            "path": "ddf--datapoints--territorial_emissions_by_bunkers--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "territorial_emissions_by_bunkers"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
                     "year"
                 ]
             }
@@ -912,6 +975,26 @@
                     "geo",
                     "year"
                 ],
+                "value": "consumption_emissions_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions_by_bunkers--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "consumption_emissions_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--consumption_emissions_by_bunkers--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
                 "value": "consumption_emissions_statistical_difference",
                 "resources": [
                     "ddf--datapoints--consumption_emissions_statistical_difference--by--global--year"
@@ -967,6 +1050,26 @@
                 "value": "emissions_transfers",
                 "resources": [
                     "ddf--datapoints--emissions_transfers--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "emissions_transfers_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers_by_bunkers--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "emissions_transfers_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--emissions_transfers_by_bunkers--by--global--year"
                 ]
             },
             {
@@ -1249,6 +1352,26 @@
                 "value": "territorial_emissions",
                 "resources": [
                     "ddf--datapoints--territorial_emissions--by--region--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "territorial_emissions_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions_by_bunkers--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "territorial_emissions_by_bunkers",
+                "resources": [
+                    "ddf--datapoints--territorial_emissions_by_bunkers--by--global--year"
                 ]
             },
             {

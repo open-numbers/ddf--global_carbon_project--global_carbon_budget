@@ -20,6 +20,9 @@ consumption_emissions_statistical_difference,Consumption Emissions Statistical D
 emissions_transfers_statistical_difference,Emissions Transfers Statistical Difference,,,measure,
 historical_cement_carbonation_sink,historical cement carbonation sink,,,measure,
 historical_fossil_emissions_excluding_carbonation,historical fossil emissions excluding carbonation,,,measure,
+territorial_emissions_by_bunkers,Territorial Emissions by Bunkers,,,measure,
+consumption_emissions_by_bunkers,Consumption Emissions by Bunkers,,,measure,
+emissions_transfers_by_bunkers,Emissions Transfers by Bunkers,,,measure,
 name,Name,,,string,
 geo,Geo location,,,entity_domain,
 nation,nation,,,entity_set,geo
