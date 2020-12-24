@@ -26,7 +26,8 @@ EXCEL_CONFIG_NATION = {
 
 EXCEL_CONFIG_GLOBAL = {
     'Global Carbon Budget': {
-        'skiprows': 20
+        'skiprows': 20,
+        'skipfooter': 1
     },
     'Fossil Emissions by Category': {
         'skiprows': 8
@@ -44,7 +45,8 @@ EXCEL_CONFIG_GLOBAL = {
         'skiprows': 9
     },
     'Historical Budget': {
-        'skiprows': 15
+        'skiprows': 15,
+        'skipfooter': 1
     }
 }
 
@@ -65,6 +67,13 @@ def global_carbon_budget_datapoints(sheet_data, historical=False):
     df = df.loc[:, 'Year':]
     df = df.rename(columns={'Year': 'year'})
     df['global'] = 'world'
+    # remove 2020 estimates
+    df = df[~df['year'].isin(["2020*", "*2020"])]
+    try:
+        df['year'].dropna().astype(int)
+    except ValueError:
+        print('the year column contains non integer values')
+        raise
     df = df.set_index(['global', 'year'])
     if historical:
         df.columns = df.columns.map(lambda x: 'historical '+x)
