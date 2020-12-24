@@ -8,7 +8,7 @@
     "description": "Global Carbon Budget 2019 https://doi.org/10.5194/essd-11-1783-2019",
     "author": "Gapminder",
     "license": "CC-BY-4.0",
-    "created": "2020-08-25T06:04:59.657298+00:00",
+    "created": "2020-12-24T03:58:27.013134+00:00",
     "translations": [],
     "version": "0.0.1",
     "resources": [
@@ -73,6 +73,27 @@
                     },
                     {
                         "name": "budget_imbalance"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--cement_carbonation_sink--by--global--year",
+            "path": "ddf--datapoints--cement_carbonation_sink--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "cement_carbonation_sink"
                     }
                 ],
                 "primaryKey": [
@@ -250,8 +271,8 @@
             }
         },
         {
-            "name": "ddf--datapoints--fossil_fuel_and_industry--by--global--year",
-            "path": "ddf--datapoints--fossil_fuel_and_industry--by--global--year.csv",
+            "name": "ddf--datapoints--fossil_emissions_excluding_carbonation--by--global--year",
+            "path": "ddf--datapoints--fossil_emissions_excluding_carbonation--by--global--year.csv",
             "schema": {
                 "fields": [
                     {
@@ -261,7 +282,7 @@
                         "name": "year"
                     },
                     {
-                        "name": "fossil_fuel_and_industry"
+                        "name": "fossil_emissions_excluding_carbonation"
                     }
                 ],
                 "primaryKey": [
@@ -313,8 +334,8 @@
             }
         },
         {
-            "name": "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year",
-            "path": "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year.csv",
+            "name": "ddf--datapoints--historical_cement_carbonation_sink--by--global--year",
+            "path": "ddf--datapoints--historical_cement_carbonation_sink--by--global--year.csv",
             "schema": {
                 "fields": [
                     {
@@ -324,7 +345,28 @@
                         "name": "year"
                     },
                     {
-                        "name": "historical_fossil_fuel_and_industry"
+                        "name": "historical_cement_carbonation_sink"
+                    }
+                ],
+                "primaryKey": [
+                    "global",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--historical_fossil_emissions_excluding_carbonation--by--global--year",
+            "path": "ddf--datapoints--historical_fossil_emissions_excluding_carbonation--by--global--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "global"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "historical_fossil_emissions_excluding_carbonation"
                     }
                 ],
                 "primaryKey": [
@@ -808,6 +850,26 @@
                     "geo",
                     "year"
                 ],
+                "value": "cement_carbonation_sink",
+                "resources": [
+                    "ddf--datapoints--cement_carbonation_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "cement_carbonation_sink",
+                "resources": [
+                    "ddf--datapoints--cement_carbonation_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
                 "value": "consumption_emissions",
                 "resources": [
                     "ddf--datapoints--consumption_emissions--by--global--year",
@@ -932,9 +994,9 @@
                     "geo",
                     "year"
                 ],
-                "value": "fossil_fuel_and_industry",
+                "value": "fossil_emissions_excluding_carbonation",
                 "resources": [
-                    "ddf--datapoints--fossil_fuel_and_industry--by--global--year"
+                    "ddf--datapoints--fossil_emissions_excluding_carbonation--by--global--year"
                 ]
             },
             {
@@ -942,9 +1004,9 @@
                     "global",
                     "year"
                 ],
-                "value": "fossil_fuel_and_industry",
+                "value": "fossil_emissions_excluding_carbonation",
                 "resources": [
-                    "ddf--datapoints--fossil_fuel_and_industry--by--global--year"
+                    "ddf--datapoints--fossil_emissions_excluding_carbonation--by--global--year"
                 ]
             },
             {
@@ -992,9 +1054,9 @@
                     "geo",
                     "year"
                 ],
-                "value": "historical_fossil_fuel_and_industry",
+                "value": "historical_cement_carbonation_sink",
                 "resources": [
-                    "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year"
+                    "ddf--datapoints--historical_cement_carbonation_sink--by--global--year"
                 ]
             },
             {
@@ -1002,9 +1064,29 @@
                     "global",
                     "year"
                 ],
-                "value": "historical_fossil_fuel_and_industry",
+                "value": "historical_cement_carbonation_sink",
                 "resources": [
-                    "ddf--datapoints--historical_fossil_fuel_and_industry--by--global--year"
+                    "ddf--datapoints--historical_cement_carbonation_sink--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "historical_fossil_emissions_excluding_carbonation",
+                "resources": [
+                    "ddf--datapoints--historical_fossil_emissions_excluding_carbonation--by--global--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "global",
+                    "year"
+                ],
+                "value": "historical_fossil_emissions_excluding_carbonation",
+                "resources": [
+                    "ddf--datapoints--historical_fossil_emissions_excluding_carbonation--by--global--year"
                 ]
             },
             {
