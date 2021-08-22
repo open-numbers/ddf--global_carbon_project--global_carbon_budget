@@ -54,8 +54,8 @@ def main():
     assert ('global' in source_links and
             'nation' in source_links), 'source links not correct, please check log'
 
-    download(source_links['global'], os.path.join(SOURCE_FILE_DIR, 'global.xlsx'))
-    download(source_links['nation'], os.path.join(SOURCE_FILE_DIR, 'nation.xlsx'))
+    download(source_links['global'], os.path.join(SOURCE_FILE_DIR, 'global.xlsx'), resume=False)
+    download(source_links['nation'], os.path.join(SOURCE_FILE_DIR, 'nation.xlsx'), resume=False)
     print('updated source files')
 
 
