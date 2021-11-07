@@ -12,7 +12,7 @@ from ddf_utils.factory.common import download
 
 
 VERSION = 2020
-PAGE = 'https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2020'
+PAGE = 'https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021'
 ARCHIVE_PAGE = 'https://www.globalcarbonproject.org/carbonbudget/archive.htm'
 SOURCE_FILE_DIR = '../source/'
 
