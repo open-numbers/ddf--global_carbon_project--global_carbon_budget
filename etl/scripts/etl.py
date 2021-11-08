@@ -26,8 +26,7 @@ EXCEL_CONFIG_NATION = {
 
 EXCEL_CONFIG_GLOBAL = {
     'Global Carbon Budget': {
-        'skiprows': 20,
-        'skipfooter': 1
+        'skiprows': 20
     },
     'Fossil Emissions by Category': {
         'skiprows': 8
@@ -36,7 +35,7 @@ EXCEL_CONFIG_GLOBAL = {
         'skiprows': 27
     },
     'Ocean Sink': {
-        'skiprows': 23
+        'skiprows': 26
     },
     'Terrestrial Sink': {
         'skiprows': 23
@@ -45,8 +44,7 @@ EXCEL_CONFIG_GLOBAL = {
         'skiprows': 9
     },
     'Historical Budget': {
-        'skiprows': 15,
-        'skipfooter': 1
+        'skiprows': 15
     }
 }
 
@@ -67,10 +65,10 @@ def global_carbon_budget_datapoints(sheet_data, historical=False):
     df = df.loc[:, 'Year':]
     df = df.rename(columns={'Year': 'year'})
     df['global'] = 'world'
-    # remove 2020 estimates
-    df = df[~df['year'].isin(["2020*", "*2020"])]
+    # remove estimates
+    df = df[~df['year'].isin(["2021*", "*2021"])]
     try:
-        df['year'].dropna().astype(int)
+        df['year'] = df['year'].dropna().astype(int)
     except ValueError:
         print('the year column contains non integer values')
         raise
