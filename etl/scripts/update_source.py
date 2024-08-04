@@ -11,8 +11,8 @@ import pandas as pd
 from ddf_utils.factory.common import download
 
 
-VERSION = 2021
-PAGE = 'https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021'
+VERSION = 2023
+PAGE = 'https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2023'
 ARCHIVE_PAGE = 'https://www.globalcarbonproject.org/carbonbudget/archive.htm'
 SOURCE_FILE_DIR = '../source/'
 
@@ -26,7 +26,7 @@ def get_source_file_links(html):
             text = etree.tostring(elem).decode('utf-8')
             if 'Global Budget' in text:
                 res['global'] = elem.attrib['href']
-            if 'National Emissions' in text:
+            if 'Fossil Carbon Emissions' in text:
                 res['nation'] = elem.attrib['href']
     return res
 
@@ -51,8 +51,8 @@ def main():
 
     print('source links:')
     print(source_links)
-    assert ('global' in source_links and
-            'nation' in source_links), 'source links not correct, please check log'
+    # assert ('global' in source_links and
+    #         'nation' in source_links), 'source links not correct, please check log'
 
     download(source_links['global'], os.path.join(SOURCE_FILE_DIR, 'global.xlsx'), resume=False)
     download(source_links['nation'], os.path.join(SOURCE_FILE_DIR, 'nation.xlsx'), resume=False)

@@ -26,19 +26,19 @@ EXCEL_CONFIG_NATION = {
 
 EXCEL_CONFIG_GLOBAL = {
     'Global Carbon Budget': {
-        'skiprows': 20
+        'skiprows': 21
     },
     'Fossil Emissions by Category': {
         'skiprows': 8
     },
     'Land-Use Change Emissions': {
-        'skiprows': 27
+        'skiprows': 37
     },
     'Ocean Sink': {
-        'skiprows': 26
+        'skiprows': 30
     },
     'Terrestrial Sink': {
-        'skiprows': 23
+        'skiprows': 27
     },
     'Cement Carbonation Sink': {
         'skiprows': 9
@@ -66,7 +66,7 @@ def global_carbon_budget_datapoints(sheet_data, historical=False):
     df = df.rename(columns={'Year': 'year'})
     df['global'] = 'world'
     # remove estimates
-    df = df[~df['year'].isin(["2021*", "*2021"])]
+    df = df[~df['year'].isin(["2023*", "*2023"])]
     try:
         df['year'] = df['year'].dropna().astype(int)
     except ValueError:
