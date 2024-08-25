@@ -8,7 +8,7 @@
     "description": "Global Carbon Budget 2019 https://doi.org/10.5194/essd-11-1783-2019",
     "author": "Gapminder",
     "license": "CC-BY-4.0",
-    "created": "2022-03-27T02:01:30.929457+00:00",
+    "created": "2024-08-25T01:22:37.646984+00:00",
     "translations": [],
     "version": "0.0.1",
     "resources": [
@@ -36,7 +36,9 @@
                         "name": "domain"
                     }
                 ],
-                "primaryKey": "concept"
+                "primaryKey": [
+                    "concept"
+                ]
             }
         },
         {
@@ -669,7 +671,9 @@
                         "name": "is--global"
                     }
                 ],
-                "primaryKey": "geo"
+                "primaryKey": [
+                    "geo"
+                ]
             }
         }
     ],
